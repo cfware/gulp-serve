@@ -30,7 +30,17 @@ const tryStartPorts = function(app, port, ...ports) {
 		.catch(() => tryStartPorts(app, ...ports));
 };
 
-const gulpServe = function(options) {
+/**
+ * Basic HTTP connect gulp task
+ *
+ * @param {!Object} options - Options to use for starting the HTTP server.
+ * @param {!number[]} options.ports - Array of ports to try listening on, include 0 for random port.
+ * @param {boolean} options.nocompression - Set true to disable compression.
+ * @param {Object} options.proxies - Key = URI, value = option passed to http-proxy-middleware.
+ * @param {Object} options.redirects - Passed to @cfware/middleware-redirects if set.
+ * @param {Object} options.statics - Key = URI, value = base path for files to be statically served.
+ */
+module.exports = function gulpServe(options) {
 	const app = connect();
 
 	if (!options) {
@@ -90,18 +100,4 @@ const gulpServe = function(options) {
 			})
 			.catch(reject);
 	});
-};
-
-/**
- * Basic HTTP connect gulp task
- *
- * @param {!Object} options - Options to use for starting the HTTP server.
- * @param {!number[]} options.ports - Array of ports to try listening on, include 0 for random port.
- * @param {boolean} options.nocompression - Set true to disable compression.
- * @param {Object} options.proxies - Key = URI, value = option passed to http-proxy-middleware.
- * @param {Object} options.redirects - Passed to @cfware/middleware-redirects if set.
- * @param {Object} options.statics - Key = URI, value = base path for files to be statically served.
- */
-module.exports = function gulpServeTask(options) {
-	return () => gulpServe(options);
 };

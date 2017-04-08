@@ -20,7 +20,7 @@ npm i --save-dev @cfware/gulp-serve
 const gulp = require('gulp');
 const gulpServe = require('@cfware/gulp-serve');
 
-gulp.task('serve', gulpServe({
+gulp.task('serve', () => gulpServe({
 	ports: [8081, 0],
 	statics: {'/': 'test'},
 	redirects: {'/': '/my-app'},

@@ -1,0 +1,38 @@
+{
+  "name": "@cfware/gulp-serve",
+  "version": "0.1.0",
+  "description": "Basic HTTP connect gulp task",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfware/gulp-serve.git"
+  },
+  "keywords": [
+    "connect",
+    "gulp",
+    "httpd"
+  ],
+  "engines": {
+    "node": "~6.10.0"
+  },
+  "author": "Corey Farrell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cfware/gulp-serve/issues"
+  },
+  "homepage": "https://github.com/cfware/gulp-serve#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  },
+  "dependencies": {
+    "@cfware/middleware-redirects": "^0.1.0",
+    "compression": "^1.6.2",
+    "connect": "^3.6.0",
+    "gulp-util": "^3.0.8",
+    "http-proxy-middleware": "^0.17.4",
+    "serve-static": "^1.12.1"
+  }
+}

@@ -1,5 +1,7 @@
 # @cfware/gulp-serve
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cfware/gulp-serve.svg)](https://greenkeeper.io/)
+
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![MIT][license-image]](LICENSE)
